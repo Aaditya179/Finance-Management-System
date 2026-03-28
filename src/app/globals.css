@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: theme('colors.background');
+    color: theme('colors.foreground');
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-brand-gradient;
+  }
+  
+  .glass-effect {
+    @apply bg-card/80 backdrop-blur-md border border-cardBorder;
+  }
+}
