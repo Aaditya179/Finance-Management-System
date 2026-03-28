@@ -1,9 +1,10 @@
 import { ChevronDown } from "lucide-react";
+import { useSettings } from "@/lib/contexts/SettingsContext";
 
 interface Transaction {
   id: string;
   name: string;
-  date: string;
+  dateStr: string;
   amount: number;
   type: 'incoming' | 'outgoing';
   cardNumber: string;
@@ -13,11 +14,13 @@ interface Transaction {
 }
 
 export default function TransactionList() {
+  const { formatCurrency, formatDate } = useSettings();
+  
   const transactions: Transaction[] = [
-    { id: '1', name: "PayPal", date: "16 Jul 2024", amount: 848.84, type: 'incoming', cardNumber: "****9484", initial: "P", color: "bg-blue-500/20 text-blue-400" },
-    { id: '2', name: "Wise", date: "15 Jul 2024", amount: -665.56, type: 'outgoing', cardNumber: "****9485", initial: "W", color: "bg-cyan-500/20 text-cyan-400" },
-    { id: '3', name: "Atlassian", date: "14 Jul 2024", amount: 546.84, type: 'incoming', cardNumber: "****9485", initial: "A", color: "bg-blue-600/20 text-blue-500" },
-    { id: '4', name: "Dropbox", date: "13 Jul 2024", amount: -738.59, type: 'outgoing', cardNumber: "****9486", initial: "D", color: "bg-sky-500/20 text-sky-400" },
+    { id: '1', name: "PayPal", dateStr: formatDate(new Date('2024-07-16')), amount: 848.84, type: 'incoming', cardNumber: "****9484", initial: "P", color: "bg-blue-500/20 text-blue-400" },
+    { id: '2', name: "Wise", dateStr: formatDate(new Date('2024-07-15')), amount: -665.56, type: 'outgoing', cardNumber: "****9485", initial: "W", color: "bg-cyan-500/20 text-cyan-400" },
+    { id: '3', name: "Atlassian", dateStr: formatDate(new Date('2024-07-14')), amount: 546.84, type: 'incoming', cardNumber: "****9485", initial: "A", color: "bg-blue-600/20 text-blue-500" },
+    { id: '4', name: "Dropbox", dateStr: formatDate(new Date('2024-07-13')), amount: -738.59, type: 'outgoing', cardNumber: "****9486", initial: "D", color: "bg-sky-500/20 text-sky-400" },
   ];
 
   return (
@@ -50,11 +53,11 @@ export default function TransactionList() {
             </div>
             
             <div className="text-[13px] font-medium text-[#888888]">
-              {tx.date}
+              {tx.dateStr}
             </div>
             
             <div className={`text-right font-semibold text-[14px] ${tx.type === 'incoming' ? 'text-blue-400' : 'text-red-400'}`}>
-              {tx.type === 'incoming' ? '+' : ''}{tx.amount.toFixed(2)}
+              {tx.type === 'incoming' ? '+' : ''}{formatCurrency(Math.abs(tx.amount))}
             </div>
           </div>
         ))}

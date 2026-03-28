@@ -1,0 +1,6 @@
+date err: new row violates row-level security policy for table "investments"
+purchased_at err: Could not find the 'purchased_at' column of 'investments' in the schema cache
+purchase_date err: Could not find the 'purchase_date' column of 'investments' in the schema cache
+buy_date err: Could not find the 'buy_date' column of 'investments' in the schema cache
+date_purchased err: Could not find the 'date_purchased' column of 'investments' in the schema cache
+created_at err: new row violates row-level security policy for table "investments"

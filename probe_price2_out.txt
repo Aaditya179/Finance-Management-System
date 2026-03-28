@@ -1,0 +1,5 @@
+buy_price err: Could not find the 'buy_price' column of 'investments' in the schema cache
+value err: Could not find the 'value' column of 'investments' in the schema cache
+amount_invested err: Could not find the 'amount_invested' column of 'investments' in the schema cache
+amount_usd err: Could not find the 'amount_usd' column of 'investments' in the schema cache
+purchase_price err: new row violates row-level security policy for table "investments"

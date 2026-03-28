@@ -11,11 +11,11 @@ import {
   BarChart3, 
   Calculator, 
   FileText, 
-  MessageSquare,
   Settings,
   MessageCircleQuestion,
   HelpCircle,
-  Moon
+  Moon,
+  Bot
 } from "lucide-react";
 
 const NAV_ITEMS = [
@@ -26,8 +26,7 @@ const NAV_ITEMS = [
   { name: "Investment", href: "/dashboard/investment", icon: PiggyBank },
   { name: "Statistic", href: "/dashboard/statistic", icon: BarChart3 },
   { name: "Budgeting", href: "/dashboard/budgeting", icon: Calculator },
-  { name: "Report", href: "/dashboard/report", icon: FileText },
-  { name: "Message", href: "/dashboard/messages", icon: MessageSquare, badge: 4 },
+  { name: "Portfolio", href: "/dashboard/portfolio-generator", icon: Bot },
 ];
 
 const SETTINGS_ITEMS = [
@@ -73,11 +72,6 @@ export default function Sidebar() {
                     <item.icon className={`w-5 h-5 transition-colors ${isActive ? "text-brand-light" : "text-[#555] group-hover:text-white"}`} />
                     <span className="text-[14px]">{item.name}</span>
                   </div>
-                  {item.badge && (
-                    <span className="bg-brand-dark/20 text-brand-light text-[10px] font-bold px-2 py-0.5 rounded-full border border-brand-dark/30">
-                      {item.badge}
-                    </span>
-                  )}
                 </Link>
               );
             })}

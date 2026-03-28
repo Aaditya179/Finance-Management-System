@@ -1,0 +1,5 @@
+total_amount err: Could not find the 'total_amount' column of 'investments' in the schema cache
+total err: Could not find the 'total' column of 'investments' in the schema cache
+cost err: Could not find the 'cost' column of 'investments' in the schema cache
+unit_price err: Could not find the 'unit_price' column of 'investments' in the schema cache
+price err: Could not find the 'price' column of 'investments' in the schema cache

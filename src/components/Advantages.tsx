@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -81,9 +82,22 @@ export default function Advantages() {
           </p>
           
           <div className="flex flex-wrap justify-center gap-6 md:gap-10 items-center">
-            {["NYSE", "Citi", "CapitalOne", "BOA", "VISA", "Mastercard"].map((partner) => (
-              <div key={partner} className="partner-logo w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#111] border border-white/5 shadow-2xl flex items-center justify-center text-[#ff9a44] font-bold text-xs md:text-sm hover:scale-110 transition-transform duration-300 hover:shadow-[0_0_20px_rgba(255,154,68,0.2)] cursor-pointer">
-                {partner}
+            {[
+              { name: "NYSE", logo: "/images/partners/nyse.svg" },
+              { name: "Citi", logo: "/images/partners/citi.svg" },
+              { name: "CapitalOne", logo: "/images/partners/capitalone.svg" },
+              { name: "BOA", logo: "/images/partners/boa.svg" },
+              { name: "VISA", logo: "/images/partners/visa.svg" },
+              { name: "Mastercard", logo: "/images/partners/mastercard.svg" }
+            ].map((partner) => (
+              <div key={partner.name} className="partner-logo w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#111] border border-white/5 shadow-2xl flex items-center justify-center hover:scale-110 transition-transform duration-300 hover:shadow-[0_0_20px_rgba(255,154,68,0.2)] cursor-pointer group hover:border-[#ff9a44]/30">
+                <Image 
+                  src={partner.logo} 
+                  alt={partner.name} 
+                  width={48} 
+                  height={48} 
+                  className="w-10 h-10 md:w-14 md:h-14 object-contain filter brightness-0 invert opacity-60 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-sm" 
+                />
               </div>
             ))}
           </div>

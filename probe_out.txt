@@ -1,0 +1,5 @@
+asset_name err: Could not find the 'asset_name' column of 'investments' in the schema cache
+name err: new row violates row-level security policy for table "investments"
+title err: Could not find the 'title' column of 'investments' in the schema cache
+symbol err: new row violates row-level security policy for table "investments"
+category err: new row violates row-level security policy for table "investments"

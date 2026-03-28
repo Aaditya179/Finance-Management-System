@@ -1,0 +1,5 @@
+units err: Could not find the 'units' column of 'investments' in the schema cache
+shares err: Could not find the 'shares' column of 'investments' in the schema cache
+amount err: new row violates row-level security policy for table "investments"
+volume err: Could not find the 'volume' column of 'investments' in the schema cache
+qty err: Could not find the 'qty' column of 'investments' in the schema cache
